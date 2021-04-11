@@ -1,7 +1,7 @@
 version: "3"
 services:
   postgres:
-    container_name: game-picker_db
+    container_name: service_management_db
     image: postgres:latest
     ports:
     - "5432:5432"
@@ -15,11 +15,12 @@ services:
   pgadmin:
     links:
     - postgres:postgres
-    container_name: game-picker_pgadmin
+    container_name: service_management_pgadmin
     image: dpage/pgadmin4
     ports:
     - "8080:80"
-    # volumes:
+    volumes:
+    - /root/.pgadmin
     # - data/pdadmin:/root/.pgadmin
     env_file:
     - docker.env
