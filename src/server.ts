@@ -5,6 +5,7 @@ import App from "./app";
 import config from "./ormconfig";
 import PostController from "./posts/posts_controller";
 import GamesController from "./games/games_controller";
+import ServicesController from "./services/services_controller";
 import AuthenticationController from "./authentication/authentication.controller";
 
 (async () => {
@@ -20,6 +21,7 @@ import AuthenticationController from "./authentication/authentication.controller
       new PostController(),
       new AuthenticationController(),
       new GamesController(),
+      new ServicesController(),
     ],
     Number(process.env.PORT) || 5000
   );
