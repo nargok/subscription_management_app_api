@@ -1,6 +1,13 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, ManyToMany, JoinTable } from 'typeorm'
-import User from '../user/user.entity'
-import Category from '../category/category.entity'
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  ManyToMany,
+  JoinTable,
+} from "typeorm";
+import User from "../user/user.entity";
+import Category from "../category/category.entity";
 
 @Entity()
 class Post {
@@ -14,7 +21,7 @@ class Post {
   public content!: string;
 
   @ManyToOne(() => User, (author: User) => author.posts)
-  public author!: User
+  public author!: User;
 
   @ManyToMany(() => Category)
   @JoinTable()

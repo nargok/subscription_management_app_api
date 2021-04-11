@@ -1,10 +1,10 @@
-import express from 'express';
+import express from "express";
 const app = express();
 const router = express.Router();
 
-router.get('/helloworld', (req, res) => {
-  res.status(200).send({ message: 'Hello, world'})
-})
+router.get("/helloworld", (req, res) => {
+  res.status(200).send({ message: "Hello, world" });
+});
 
 // app.use((req, res) => {
 //   res.status(404)

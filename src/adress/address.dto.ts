@@ -1,14 +1,14 @@
-import { IsString } from 'class-validator'
+import { IsString } from "class-validator";
 
 class CreateAddressDto {
   @IsString()
-  public street!: string
+  public street!: string;
 
   @IsString()
-  public city!: string
+  public city!: string;
 
   @IsString()
-  public country!: string
+  public country!: string;
 }
 
-export default CreateAddressDto
+export default CreateAddressDto;

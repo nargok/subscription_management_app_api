@@ -1,7 +1,14 @@
-import { Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
-import Address from '../adress/adress.entity'
-import Post from '../posts/post.entity'
-import Game from '../games/game.entity'
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToMany,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+import Address from "../adress/adress.entity";
+import Post from "../posts/post.entity";
+import Game from "../games/game.entity";
 
 @Entity()
 class User {
@@ -9,20 +16,20 @@ class User {
   public id!: string;
 
   @Column()
-  public fullName!: string
+  public fullName!: string;
 
   @Column()
-  public email!: string
+  public email!: string;
 
   @Column()
-  public password!: string
+  public password!: string;
 
   @OneToOne(() => Address, (address: Address) => address.user, {
     cascade: true,
-    eager: true
+    eager: true,
   })
   @JoinColumn()
-  public address!: Address
+  public address!: Address;
 
   @OneToMany(() => Post, (post: Post) => post.author)
   public posts!: Post[];
@@ -31,4 +38,4 @@ class User {
   public games!: Game[];
 }
 
-export default User
+export default User;

@@ -1,4 +1,9 @@
-import { Column, Entity, EntityRepository, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  Column,
+  Entity,
+  EntityRepository,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 
 @Entity()
 class Category {
