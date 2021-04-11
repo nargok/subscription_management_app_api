@@ -8,7 +8,7 @@ import {
 } from "typeorm";
 import User from "../user/user.entity";
 
-@Entity({ name: "games" })
+@Entity({ name: "services" })
 class Game {
   @PrimaryGeneratedColumn()
   public id!: number;
@@ -20,10 +20,7 @@ class Game {
   public url!: string;
 
   @Column()
-  public price!: number;
-
-  @Column({ nullable: true, type: "text" })
-  public dueDate?: string;
+  public monthlyPrice?: number;
 
   @Column({ nullable: true, type: "text" })
   public memo?: string;
